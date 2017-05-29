@@ -1,0 +1,223 @@
+FORMAT: 1A
+HOST: http://reliefsupports.org/api/v1/entry/
+
+# Donations API
+
+Donations is a simple API allowing consumers to view polls and vote in them.
+
+## Donations Collection [/donations]
+
+### List All Donations [GET]
+
+Get Donations list 
+
++ Response 200 (application/json)
+
+            {
+                "error": false,
+                "message": null,
+                "data": {
+                    "total": 1,
+                    "per_page": 10,
+                    "current_page": 1,
+                    "last_page": 1,
+                    "next_page_url": null,
+                    "prev_page_url": null,
+                    "from": 1,
+                    "to": 1,
+                    "data": [
+                        {
+                            "id": 1,
+                            "name": "Pradee Rajapaksha",
+                            "telephone": "071*******",
+                            "address": "Katubedda, Moratuwa",
+                            "city": "Moratuwa",
+                            "donation": "Watter bottles.",
+                            "information": null,
+                            "created_at": "2017-05-29 17:09:17",
+                            "updated_at": "2017-05-29 17:09:17"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Harsha Sampath",
+                            "telephone": "071*******",
+                            "address": "Navinna",
+                            "city": "Maharagama",
+                            "donation": "Foods.",
+                            "information": null,
+                            "created_at": "2017-05-29 18:21:15",
+                            "updated_at": "2017-05-29 18:21:15"
+                        }
+                    ]
+                }
+            }
+
+
+### Create a New Donations [POST]
+
+Create Donations using this action.
+
++ Request (application/json)
+
+            {
+                "name": "Pradee Rajapaksha" ,
+                "telephone": "0712929212" ,
+                "address": "Katubedda, Moratuwa" ,
+                "city": "Moratuwa" ,
+                "donation": "Watter bottles."
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /donations/1
+
+    + Body
+
+            {
+                "error": false,
+                "message": "Donation successfully added.",
+                "data": null
+            }
+
+
+### Update a Donations [PUT]
+
+Update Donations using this action.
+
++ Request (application/json)
+
+            {
+                "name": "Pradee Rajapaksha" ,
+                "telephone": "071*******" ,
+                "address": "Katubedda, Moratuwa" ,
+                "city": "Moratuwa" ,
+                "donation": "Watter bottles (1000)."
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /donations/1
+
+    + Body
+
+            {
+                "error": false,
+                "code": 200,
+                "message": "Donation successfully updated",
+                "data": true
+            }
+
+
+# Needs API
+
+Needs is a simple API allowing consumers to view polls and vote in them.
+
+## Needs Collection [/needs]
+
+### List All Needs [GET]
+
+Get Needs list 
+
++ Response 200 (application/json)
+
+            {
+                "error": false,
+                "message": null,
+                "data": {
+                    "total": 1,
+                    "per_page": 10,
+                    "current_page": 1,
+                    "last_page": 1,
+                    "next_page_url": null,
+                    "prev_page_url": null,
+                    "from": 1,
+                    "to": 1,
+                    "data": [
+                        {
+                            "id": 1,
+                            "name": "Chamin Vihanga",
+                            "telephone": "071*******",
+                            "address": "Akuressa",
+                            "city": "Mathara",
+                            "needs": "Watter bottles.",
+                            "heads": null,
+                            "created_at": "2017-05-29 17:09:17",
+                            "updated_at": "2017-05-29 17:09:17"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Shameera Priyashan",
+                            "telephone": "071*******",
+                            "address": "Baddegama",
+                            "city": "Galle",
+                            "needs": "Foods.",
+                            "heads": null,
+                            "created_at": "2017-05-29 18:21:15",
+                            "updated_at": "2017-05-29 18:21:15"
+                        }
+                    ]
+                }
+            }
+
+
+### Create a New Needs [POST]
+
+Create Donations using this action.
+
++ Request (application/json)
+
+            {
+                "name": "Chamin Vihanga",
+                "telephone": "071*******",
+                "address": "Akuressa",
+                "city": "Mathara",
+                "needs": "Watter bottles."
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /donations/1
+
+    + Body
+
+            {
+                "error": false,
+                "message": "Need successfully added.",
+                "data": null
+            }
+
+
+### Update a Donations [PUT]
+
+Update Donations using this action.
+
++ Request (application/json)
+
+            {
+                "name": "Chamin Vihanga",
+                "telephone": "071*******",
+                "address": "Akuressa",
+                "city": "Mathara",
+                "needs": "Watter bottles (1000)."
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /donations/1
+
+    + Body
+
+            {
+                "error": false,
+                "code": 200,
+                "message": "Need successfully updated",
+                "data": true
+            }
